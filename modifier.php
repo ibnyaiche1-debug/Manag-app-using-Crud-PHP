@@ -1,5 +1,12 @@
-<?php
+<?php 
 require_once "conn.php";
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
 
 if (!isset($_GET["id_etudiant"])) {
     header("Location: accueil.php");

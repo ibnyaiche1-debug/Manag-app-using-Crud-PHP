@@ -1,5 +1,12 @@
 <?php
-require_once "conn.php";
+require_once "conn.php"; 
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+
 
 if (
     !empty($_POST['cin_etudiant']) &&

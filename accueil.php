@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -148,7 +158,15 @@
             <h1 class="h3 mb-1 section-title">Gestion des Étudiants</h1>
             <div class="text-muted">Ajouter un étudiant puis afficher la liste</div>
           </div>
-          <span class="badge badge-soft rounded-pill px-3 py-2">Formulaire + Tableau</span>
+
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge badge-soft rounded-pill px-3 py-2">
+            Formulaire + Tableau
+            </span>
+            <a href="logout.php" class="btn btn-outline-danger btn-sm">
+            🚪 Déconnexion
+            </a>
+          </div>
         </div>
 
         <!-- FORM CARD -->
