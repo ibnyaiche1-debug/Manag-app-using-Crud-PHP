@@ -1,10 +1,5 @@
 <?php
-session_start();
 
-if (!isset($_SESSION['user_id'])) {
-    header("Location: login.php");
-    exit;
-}
     require "conn.php";
 
     if(isset($_POST['fullName']) and isset($_POST['email']) and isset($_POST['password'])){
